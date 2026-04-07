@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Björklinge Maskin AB – Maskinuthyrning för grävning, markarbete och anläggning. Pålitliga maskiner, flexibla lösningar och personlig service i Uppsala-regionen.">
+    <meta name="keywords" content="maskinuthyrning, grävmaskin, minigrävare, hjullastare, markarbete, Uppsala, Björklinge">
+    <meta name="author" content="Björklinge Maskin AB">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Björklinge Maskin AB – Maskinuthyrning för grävning och markarbete">
+    <meta property="og:description" content="Pålitliga maskiner för gräv-, mark- och anläggningsarbeten. Kontakta oss för offert.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="sv_SE">
+    
+    <title>Björklinge Maskin AB – Maskinuthyrning för grävning och markarbete</title>
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon placeholder -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
+</head>
+<body>
+    <!-- ============ LOADER ============ -->
+    <div id="loader" class="loader">
+        <div class="loader-inner">
+            <div class="loader-icon">
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                    <path class="loader-arm" d="M10 50 L20 30 L40 25 L50 15" stroke="#D4A843" stroke-width="3" stroke-linecap="round" fill="none"/>
+                    <rect class="loader-body" x="5" y="45" width="30" height="12" rx="3" fill="#1A3C34"/>
+                    <circle class="loader-wheel" cx="12" cy="57" r="4" fill="#3A3A3A" stroke="#D4A843" stroke-width="1.5"/>
+                    <circle class="loader-wheel" cx="28" cy="57" r="4" fill="#3A3A3A" stroke="#D4A843" stroke-width="1.5"/>
+                </svg>
+            </div>
+            <div class="loader-text">Björklinge Maskin</div>
+            <div class="loader-bar">
+                <div class="loader-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ SCROLL PROGRESS ============ -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ============ CUSTOM CURSOR ============ -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="custom-cursor-dot" id="customCursorDot"></div>
+
+    <!-- ============ HEADER ============ -->
+    <header class="header" id="header">
+        <div class="header-inner container">
+            <a href="#" class="logo" aria-label="Björklinge Maskin AB">
+                <div class="logo-icon">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                        <rect x="2" y="20" width="18" height="10" rx="2" fill="currentColor"/>
+                        <path d="M6 20 L12 8 L24 6 L30 2" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                        <circle cx="8" cy="30" r="3" fill="var(--accent)"/>
+                        <circle cx="16" cy="30" r="3" fill="var(--accent)"/>
+                        <rect x="20" y="14" width="8" height="6" rx="1" fill="currentColor" opacity="0.6"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-name">Björklinge</span>
+                    <span class="logo-sub">MASKIN AB</span>
+                </div>
+            </a>
+            
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="#om-oss" class="nav-link" data-section="om-oss">Om oss</a></li>
+                    <li><a href="#maskiner" class="nav-link" data-section="maskiner">Maskiner</a></li>
+                    <li><a href="#fordelar" class="nav-link" data-section="fordelar">Fördelar</a></li>
+                    <li><a href="#galleri" class="nav-link" data-section="galleri">Galleri</a></li>
+                    <li><a href="#sa-funkar-det" class="nav-link" data-section="sa-funkar-det">Så funkar det</a></li>
+                    <li><a href="#kontakt" class="nav-link" data-section="kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Byt tema">
+                    <svg class="theme-icon sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <svg class="theme-icon moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+                <a href="#kontakt" class="btn btn-primary btn-sm header-cta">Begär offert</a>
+                <button class="hamburger" id="hamburger" aria-label="Meny">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ MOBILE MENU ============ -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <ul class="mobile-nav-list">
+                <li><a href="#om-oss" class="mobile-nav-link">Om oss</a></li>
+                <li><a href="#maskiner" class="mobile-nav-link">Maskiner</a></li>
+                <li><a href="#fordelar" class="mobile-nav-link">Fördelar</a></li>
+                <li><a href="#galleri" class="mobile-nav-link">Galleri</a></li>
+                <li><a href="#sa-funkar-det" class="mobile-nav-link">Så funkar det</a></li>
+                <li><a href="#kontakt" class="mobile-nav-link">Kontakt</a></li>
+            </ul>
+            <a href="#kontakt" class="btn btn-primary mobile-cta">Begär offert</a>
+        </div>
+    </div>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=1920&q=80" alt="Grävmaskin i arbete" class="hero-img" loading="eager">
+            <div class="hero-overlay"></div>
+            <div class="hero-grain"></div>
+        </div>
+        
+        <div class="hero-content container">
+            <div class="hero-badges">
+                <span class="hero-badge animate-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    Snabb service
+                </span>
+                <span class="hero-badge animate-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Flexibla lösningar
+                </span>
+                <span class="hero-badge animate-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    Erfaren partner
+                </span>
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="hero-title-line animate-item">Maskinuthyrning för</span>
+                <span class="hero-title-line hero-title-accent animate-item">grävning och markarbete</span>
+            </h1>
+            
+            <p class="hero-subtitle animate-item">
+                Björklinge Maskin AB erbjuder pålitliga maskiner för gräv-, mark- och anläggningsarbeten i Uppsala-regionen. Professionell service sedan 2005.
+            </p>
+            
+            <div class="hero-ctas animate-item">
+                <a href="#kontakt" class="btn btn-primary btn-lg">
+                    <span>Begär offert</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="#maskiner" class="btn btn-outline btn-lg">
+                    <span>Se våra maskiner</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </a>
+            </div>
+        </div>
+        
+        <div class="hero-scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scrolla ner</span>
+        </div>
+        
+        <div class="hero-stats">
+            <div class="hero-stat animate-item">
+                <span class="hero-stat-number" data-count="15">0</span><span class="hero-stat-plus">+</span>
+                <span class="hero-stat-label">Års erfarenhet</span>
+            </div>
+            <div class="hero-stat animate-item">
+                <span class="hero-stat-number" data-count="500">0</span><span class="hero-stat-plus">+</span>
+                <span class="hero-stat-label">Genomförda projekt</span>
+            </div>
+            <div class="hero-stat animate-item">
+                <span class="hero-stat-number" data-count="50">0</span><span class="hero-stat-plus">+</span>
+                <span class="hero-stat-label">Maskiner i flotta</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section about" id="om-oss">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images">
+                    <div class="about-img-main reveal-left">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Grävmaskin på byggarbetsplats" loading="lazy">
+                    </div>
+                    <div class="about-img-secondary reveal-left" style="--delay: 0.2s">
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=80" alt="Maskinpark" loading="lazy">
+                    </div>
+                    <div class="about-experience-badge">
+                        <span class="about-exp-number" data-count="15">0</span>
+                        <span class="about-exp-text">års<br>erfarenhet</span>
+                    </div>
+                </div>
+                
+                <div class="about-content reveal-right">
+                    <span class="section-tag">Om Björklinge Maskin AB</span>
+                    <h2 class="section-title">Din lokala partner för <span class="text-accent">maskintjänster</span></h2>
+                    <p class="about-text">
+                        Sedan 2005 har Björklinge Maskin AB levererat pålitliga maskinlösningar till företag, entreprenörer och privatpersoner i Uppsala-regionen. Vi kombinerar gedigen erfarenhet med modern maskinpark för att ge dig de bästa förutsättningarna.
+                    </p>
+                    <p class="about-text">
+                        Vår filosofi är enkel – vi erbjuder kvalitetsmaskiner med personlig service. Oavsett om du behöver en minigrävare för hemmabruk eller en stor grävmaskin för ett kommersiellt projekt, har vi rätt lösning för dig.
+                    </p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <div>
+                                <strong>Välservade maskiner</strong>
+                                <p>Alla maskiner genomgår regelbunden service och kontroll</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            </div>
+                            <div>
+                                <strong>Snabb leverans</strong>
+                                <p>Kort leveranstid och flexibla hämtnings-/lämningsalternativ</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </div>
+                            <div>
+                                <strong>Personlig service</strong>
+                                <p>Direkt kontakt med kunnig personal som hjälper dig</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ MACHINES ============ -->
+    <section class="section machines" id="maskiner">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag reveal-up">Vår maskinpark</span>
+                <h2 class="section-title reveal-up">Maskiner för <span class="text-accent">alla behov</span></h2>
+                <p class="section-desc reveal-up">Från mindre markarbeten till stora anläggningsprojekt – vi har rätt maskin för jobbet.</p>
+            </div>
+            
+            <div class="machines-grid">
+                <div class="machine-card reveal-up" style="--delay: 0s">
+                    <div class="machine-card-img">
+                        <img src="https://images.unsplash.com/photo-1562016600-ece13e8ba570?w=600&q=80" alt="Minigrävare" loading="lazy">
+                        <div class="machine-card-overlay">
+                            <span class="machine-card-tag">Populär</span>
+                        </div>
+                    </div>
+                    <div class="machine-card-content">
+                        <h3>Minigrävare</h3>
+                        <p>Perfekt för mindre grävarbeten, trädgårdsprojekt och trånga utrymmen. 1,5–3,5 ton.</p>
+                        <div class="machine-card-specs">
+                            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="22" height="18" rx="2"/><line x1="1" y1="9" x2="23" y2="9"/></svg> Från 1,5 ton</span>
+                            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Dags-/veckohyra</span>
+                        </div>
+                        <a href="#kontakt" class="btn btn-secondary btn-full">Boka maskin</a>
+                    </div>
+                </div>
+                
+                <div class="machine-card reveal-up" style="--delay: 0.1s">
+                    <div class="machine-card-img">
+                        <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=600&q=80" alt="Grävmaskin" loading="lazy">
+                        <div class="machine-card-overlay">
+                            <span class="machine-card-tag">Mest bokad</span>
+                        </div>
+                    </div>
+                    <div class="machine-card-content">
+                        <h3>Grävmaskiner</h3>
+                        <p>Kraftfulla grävmaskiner för markarbeten, schaktning och anläggningsprojekt. 8–25 ton.</p>
+                        <div class="machine-card-specs">
+                            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="22" height="18" rx="2"/><line x1="1" y1="9" x2="23" y2="9"/></svg> Från 8 ton</span>
+                            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Dags-/veckohyra</span>
+                        </div>
+                        <a href="#kontakt" class="btn btn-secondary btn-full">Boka maskin</a>
+                    </div>
+                </div>
+                
+                <div class="machine-card reveal-up" style="--delay: 0.2s">
+                    <div class="machine-card-img">
+                        <img src="https://images.unsplash.com/photo-1580901368919-7738efb0f228?w=600&q=80" alt="Hjullastare" loading="lazy">
+                        <div class="machine-card-overlay"></div>
+                    </div>
+                    <div class="machine-card-content">
+                        <h3>Hjullastare</h3>
+                        <p>Effektiva hjullastare för lastning, transport och materialhantering på arbetsplatsen.</p>
+                        <div class="machine-card-specs">
+                            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="22" height="18" rx="2"/><line x1="1" y1="9" x2="23" y2="9"/></svg> Flera storlekar</span>
+                            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Dags-/veckohyra</span>
+                        </div>
+                        <a href="#kontakt" class="btn btn-secondary btn-full">Boka maskin</a>
+                    </div>
+                </div>
+                
+                <div class="machine-card reveal-up" style="--delay: 0.3s">
+                    <div class="machine-card-img">
+                        <img src="https://images.unsplash.com/photo-1612831455740-a2f6212eeeb2?w=600&q=80" alt="Dumper" loading="lazy">
+                        <div class="machine-card-overlay"></div>
+                    </div>
+                    <div class="machine-card-content">
+                        <h3>Dumper</h3>
+                        <p>Robusta dumprar för transport av jord, grus och material i tuff terräng.</p>
+                        <div class="machine-card-specs">
+                            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="22" height="18" rx="2"/><line x1="1" y1="9" x2="23" y2="9"/></svg> 6–10 ton</span>
+                            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Dags-/veckohyra</span>
+                        </div>
+                        <a href="#kontakt" class="btn btn-secondary btn-full">Boka maskin</a>
+                    </div>
+                </div>
+                
+                <div class="machine-card reveal-up" style="--delay: 0.4s">
+                    <div class="machine-card-img">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Tillbehör och redskap" loading="lazy">
+                        <div class="machine-card-overlay"></div>
+                    </div>
+                    <div class="machine-card-content">
+                        <h3>Tillbehör & Redskap</h3>
+                        <p>Komplett sortiment av skopor, hydraulhammare, rotortiltar och andra tillbehör.</p>
+                        <div class="machine-card-specs">
+                            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="22" height="18" rx="2"/><line x1="1" y1="9" x2="23" y2="9"/></svg> Brett sortiment</span>
+                            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Flexibel hyra</span>
+                        </div>
+                        <a href="#kontakt" class="btn btn-secondary btn-full">Läs mer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ WHY CHOOSE US ============ -->
+    <section class="section benefits" id="fordelar">
+        <div class="benefits-bg"></div>
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag reveal-up">Varför välja oss</span>
+                <h2 class="section-title reveal-up light">Det som gör oss till <span class="text-accent">rätt val</span></h2>
+                <p class="section-desc reveal-up light">Vi har byggt vårt rykte på pålitlighet, kvalitet och personlig service.</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card reveal-up" style="--delay: 0s">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>Pålitliga maskiner</h3>
+                    <p>Alla våra maskiner genomgår regelbunden service och underhåll. Du kan lita på att utrustningen fungerar felfritt.</p>
+                </div>
+                
+                <div class="benefit-card reveal-up" style="--delay: 0.1s">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                        </svg>
+                    </div>
+                    <h3>Flexibla hyreslösningar</h3>
+                    <p>Dag, vecka eller långtidshyra – vi anpassar oss efter ditt projekt och din budget.</p>
+                </div>
+                
+                <div class="benefit-card reveal-up" style="--delay: 0.2s">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <h3>Snabb personlig service</h3>
+                    <p>Direkt kontakt med vårt team. Snabb respons, rådgivning och support genom hela projektet.</p>
+                </div>
+                
+                <div class="benefit-card reveal-up" style="--delay: 0.3s">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3>Konkurrenskraftiga priser</h3>
+                    <p>Rättvisa och transparenta priser utan dolda avgifter. Alltid bra valuta för pengarna.</p>
+                </div>
+                
+                <div class="benefit-card reveal-up" style="--delay: 0.4s">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3>Lokal expertis</h3>
+                    <p>Vi känner regionen och förstår lokala förutsättningar. Nära dig – alltid redo att hjälpa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="section gallery" id="galleri">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag reveal-up">Projekt & inspiration</span>
+                <h2 class="section-title reveal-up">Våra maskiner <span class="text-accent">i arbete</span></h2>
+                <p class="section-desc reveal-up">Se hur våra maskiner levererar resultat på riktiga projekt.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item gallery-item-lg reveal-up" style="--delay: 0s">
+                    <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=900&q=80" alt="Grävmaskin i arbete" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Markarbete Uppsala</span>
+                        <span class="gallery-item-desc">Schaktning och grundläggning</span>
+                    </div>
+                </div>
+                <div class="gallery-item reveal-up" style="--delay: 0.1s">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Byggarbetsplats" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Anläggningsprojekt</span>
+                        <span class="gallery-item-desc">Väg- och markarbete</span>
+                    </div>
+                </div>
+                <div class="gallery-item reveal-up" style="--delay: 0.2s">
+                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=80" alt="Maskinpark" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Maskinflotta</span>
+                        <span class="gallery-item-desc">Redo för uppdrag</span>
+                    </div>
+                </div>
+                <div class="gallery-item reveal-up" style="--delay: 0.3s">
+                    <img src="https://images.unsplash.com/photo-1562016600-ece13e8ba570?w=600&q=80" alt="Minigrävare" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Villagrävning</span>
+                        <span class="gallery-item-desc">Pool- och trädgårdsarbete</span>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-lg reveal-up" style="--delay: 0.4s">
+                    <img src="https://images.unsplash.com/photo-1580901368919-7738efb0f228?w=900&q=80" alt="Hjullastare" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Materialhantering</span>
+                        <span class="gallery-item-desc">Lastning och transport</span>
+                    </div>
+                </div>
+                <div class="gallery-item reveal-up" style="--delay: 0.5s">
+                    <img src="https://images.unsplash.com/photo-1612831455740-a2f6212eeeb2?w=600&q=80" alt="Dumper" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Jordtransport</span>
+                        <span class="gallery-item-desc">Effektiv logistik</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ LIGHTBOX ============ -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Stäng">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <button class="lightbox-prev" aria-label="Föregående">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="lightbox-next" aria-label="Nästa">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img" id="lightboxImg">
+        </div>
+    </div>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section how-it-works" id="sa-funkar-det">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag reveal-up">Så funkar det</span>
+                <h2 class="section-title reveal-up">Enkelt att komma igång <span class="text-accent">i tre steg</span></h2>
+                <p class="section-desc reveal-up">Från första kontakt till färdigt jobb – vi gör det smidigt för dig.</p>
+            </div>
+            
+            <div class="steps">
+                <div class="steps-line">
+                    <div class="steps-line-fill" id="stepsLineFill"></div>
+                </div>
+                
+                <div class="step reveal-up" style="--delay: 0s">
+                    <div class="step-number">
+                        <span>01</span>
+                        <div class="step-pulse"></div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <h3>Kontakta oss</h3>
+                        <p>Ring, mejla eller fyll i formuläret. Berätta om ditt projekt så hjälper vi dig att hitta rätt maskin.</p>
+                    </div>
+                </div>
+                
+                <div class="step reveal-up" style="--delay: 0.15s">
+                    <div class="step-number">
+                        <span>02</span>
+                        <div class="step-pulse"></div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h3>Välj maskin</h3>
+                        <p>Vi rekommenderar den bästa lösningen för ditt behov. Du får en tydlig offert utan krångel.</p>
+                    </div>
+                </div>
+                
+                <div class="step reveal-up" style="--delay: 0.3s">
+                    <div class="step-number">
+                        <span>03</span>
+                        <div class="step-pulse"></div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <h3>Få jobbet gjort</h3>
+                        <p>Maskinen levereras och du kan köra igång. Vi finns tillgängliga om du behöver support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section testimonials" id="omdomen">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag reveal-up">Kundröster</span>
+                <h2 class="section-title reveal-up">Vad våra kunder <span class="text-accent">säger</span></h2>
+                <p class="section-desc reveal-up">Vi är stolta över det förtroende våra kunder visar oss.</p>
+            </div>
+            
+            <div class="testimonials-slider" id="testimonialsSlider">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <blockquote class="testimonial-text">
+                            "Smidigt från början till slut. Maskinen var i toppskick och leveransen gick snabbt. Björklinge Maskin är vår go-to för alla grävjobb."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">AL</div>
+                            <div>
+                                <strong>Anders Lindqvist</strong>
+                                <span>VD, Lindqvist Bygg AB</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <blockquote class="testimonial-text">
+                            "Vi hyrde en minigrävare för att gräva poolgrund hemma. Personalen var otroligt hjälpsamma och guidade oss hela vägen. Rekommenderas varmt!"
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">MJ</div>
+                            <div>
+                                <strong>Maria Johansson</strong>
+                                <span>Privatkund, Uppsala</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <blockquote class="testimonial-text">
+                            "Professionellt bemötande och maskiner som alltid fungerar. Vi har samarbetat med Björklinge Maskin i över 5 år nu och de sviker aldrig."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">EK</div>
+                            <div>
+                                <strong>Erik Karlsson</strong>
+                                <span>Projektledare, NCC</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <blockquote class="testimonial-text">
+                            "Bästa prislappen i regionen och dessutom oslagbar service. Maskinen var på plats redan dagen efter beställning. Starkt!"
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">SN</div>
+                            <div>
+                                <strong>Sofia Nilsson</strong>
+                                <span>Ägare, Nilssons Mark & Trädgård</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonials-controls">
+                    <button class="testimonial-btn prev" id="testimonialPrev" aria-label="Föregående">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <div class="testimonials-dots" id="testimonialsDots"></div>
+                    <button class="testimonial-btn next" id="testimonialNext" aria-label="Nästa">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section faq" id="faq">
+        <div class="container">
+            <div class="faq-layout">
+                <div class="faq-header">
+                    <span class="section-tag reveal-left">Vanliga frågor</span>
+                    <h2 class="section-title reveal-left">Har du <span class="text-accent">frågor?</span></h2>
+                    <p class="reveal-left">Här hittar du svar på de vanligaste frågorna om vår maskinuthyrning. Hittar du inte svaret? Kontakta oss direkt.</p>
+                    <a href="#kontakt" class="btn btn-primary reveal-left" style="margin-top: 1.5rem;">Kontakta oss</a>
+                </div>
+                
+                <div class="faq-list">
+                    <div class="faq-item reveal-right" style="--delay: 0s">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Hur bokar jag en maskin?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Du kan boka en maskin genom att ringa oss, skicka mejl eller fylla i kontaktformuläret på hemsidan. Vi återkommer med tillgänglighet och offert inom kort.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item reveal-right" style="--delay: 0.1s">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Vad kostar det att hyra en maskin?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Priset varierar beroende på maskintyp, storlek och hyresperiod. Kontakta oss för en skräddarsydd offert. Vi erbjuder alltid konkurrenskraftiga priser.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item reveal-right" style="--delay: 0.2s">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Erbjuder ni transport av maskiner?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Ja, vi erbjuder transport och leverans av maskiner direkt till din arbetsplats. Vi hanterar även hämtning efter hyresperiodens slut.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item reveal-right" style="--delay: 0.3s">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Behöver jag körkort för att använda maskinerna?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>För de flesta maskiner krävs relevant körkort eller utbildning. Vi kan ge vägledning om vilka krav som gäller och rekommendera utbildningsalternativ vid behov.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item reveal-right" style="--delay: 0.4s">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Hur lång är minsta hyresperioden?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Vi erbjuder hyra från en dag och uppåt. Vecko- och månadshyra ger ofta ett bättre pris per dag. Kontakta oss för att diskutera vad som passar ditt projekt bäst.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="kontakt">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag reveal-up">Kontakta oss</span>
+                <h2 class="section-title reveal-up">Redo att <span class="text-accent">komma igång?</span></h2>
+                <p class="section-desc reveal-up">Fyll i formuläret eller kontakta oss direkt. Vi återkommer snabbt med en offert.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-form-wrap reveal-left">
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="namn" name="namn" required placeholder=" ">
+                                <label for="namn">Namn *</label>
+                                <div class="form-line"></div>
+                                <svg class="form-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="foretag" name="foretag" placeholder=" ">
+                                <label for="foretag">Företag</label>
+                                <div class="form-line"></div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="tel" id="telefon" name="telefon" required placeholder=" ">
+                                <label for="telefon">Telefon *</label>
+                                <div class="form-line"></div>
+                                <svg class="form-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="epost" name="epost" required placeholder=" ">
+                                <label for="epost">E-post *</label>
+                                <div class="form-line"></div>
+                                <svg class="form-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                        </div>
+                        <div class="form-group full">
+                            <textarea id="meddelande" name="meddelande" rows="5" required placeholder=" "></textarea>
+                            <label for="meddelande">Meddelande *</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-full" id="submitBtn">
+                            <span class="btn-text">Skicka förfrågan</span>
+                            <span class="btn-loading">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spin"><circle cx="12" cy="12" r="10" opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10" opacity="1"/></svg>
+                            </span>
+                            <span class="btn-success">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Skickat!
+                            </span>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="contact-info reveal-right">
+                    <div class="contact-info-card">
+                        <h3>Kontaktuppgifter</h3>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Adress</strong>
+                                <p>Industrivägen 12<br>743 75 Björklinge</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Telefon</strong>
+                                <p><a href="tel:+46701234567">070-123 45 67</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>E-post</strong>
+                                <p><a href="mailto:info@bjorklingemaskin.se">info@bjorklingemaskin.se</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Öppettider</strong>
+                                <p>Mån–Fre: 07:00–17:00<br>Lör: 08:00–13:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-map">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32267.25!2d17.55!3d59.93!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465fcbff94e0a80d%3A0x40d0cf684dab5d0!2sBj%C3%B6rklinge!5e0!3m2!1ssv!2sse!4v1700000000000!5m2!1ssv!2sse" 
+                            width="100%" 
+                            height="220" 
+                            style="border:0; border-radius: 16px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Karta till Björklinge Maskin AB">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA BANNER ============ -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-banner-inner reveal-up">
+                <div class="cta-banner-content">
+                    <h2>Behöver du en maskin?</h2>
+                    <p>Kontakta oss idag för en kostnadsfri offert. Vi hjälper dig hitta rätt lösning.</p>
+                </div>
+                <div class="cta-banner-actions">
+                    <a href="tel:+46701234567" class="btn btn-light btn-lg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Ring oss
+                    </a>
+                    <a href="#kontakt" class="btn btn-outline-light btn-lg">Begär offert</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo footer-logo">
+                        <div class="logo-icon">
+                            <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+                                <rect x="2" y="20" width="18" height="10" rx="2" fill="currentColor"/>
+                                <path d="M6 20 L12 8 L24 6 L30 2" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                                <circle cx="8" cy="30" r="3" fill="var(--accent)"/>
+                                <circle cx="16" cy="30" r="3" fill="var(--accent)"/>
+                            </svg>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-name">Björklinge</span>
+                            <span class="logo-sub">MASKIN AB</span>
+                        </div>
+                    </a>
+                    <p class="footer-desc">Din lokala partner för maskinuthyrning i Uppsala-regionen. Kvalitet, pålitlighet och personlig service sedan 2005.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Snabblänkar</h4>
+                    <ul>
+                        <li><a href="#om-oss">Om oss</a></li>
+                        <li><a href="#maskiner">Maskiner</a></li>
+                        <li><a href="#fordelar">Fördelar</a></li>
+                        <li><a href="#galleri">Galleri</a></li>
+                        <li><a href="#sa-funkar-det">Så funkar det</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Maskiner</h4>
+                    <ul>
+                        <li><a href="#maskiner">Minigrävare</a></li>
+                        <li><a href="#maskiner">Grävmaskiner</a></li>
+                        <li><a href="#maskiner">Hjullastare</a></li>
+                        <li><a href="#maskiner">Dumper</a></li>
+                        <li><a href="#maskiner">Tillbehör & Redskap</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Kontakt</h4>
+                    <p>Industrivägen 12<br>743 75 Björklinge</p>
+                    <p><a href="tel:+46701234567">070-123 45 67</a></p>
+                    <p><a href="mailto:info@bjorklingemaskin.se">info@bjorklingemaskin.se</a></p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Björklinge Maskin AB. Alla rättigheter förbehållna.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Integritetspolicy</a>
+                    <a href="#">Villkor</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ BACK TO TOP ============ -->
+    <button class="back-to-top" id="backToTop" aria-label="Till toppen">
+        <svg class="back-to-top-progress" width="46" height="46" viewBox="0 0 46 46">
+            <circle class="back-to-top-circle" cx="23" cy="23" r="20" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <!-- ============ QUOTE MODAL ============ -->
+    <div class="modal-overlay" id="quoteModal">
+        <div class="modal">
+            <button class="modal-close" aria-label="Stäng">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <h3>Begär offert</h3>
+            <p>Fyll i dina uppgifter så återkommer vi med en offert.</p>
+            <form class="modal-form" id="modalForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Namn" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Företag">
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Telefon" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="E-post" required>
+                </div>
+                <div class="form-group">
+                    <select>
+                        <option value="">Välj maskintyp</option>
+                        <option>Minigrävare</option>
+                        <option>Grävmaskin</option>
+                        <option>Hjullastare</option>
+                        <option>Dumper</option>
+                        <option>Tillbehör & Redskap</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea rows="3" placeholder="Beskriv ditt projekt..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-full">Skicka förfrågan</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
