@@ -422,7 +422,7 @@
             return isValid;
         }
 
-        // Form submission
+        // Form submission — opens user's email client with draft
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -441,11 +441,34 @@
                 return;
             }
 
-            // Simulate submission
+            // Gather form data
+            const namn = form.querySelector('#namn')?.value?.trim() || '';
+            const foretag = form.querySelector('#foretag')?.value?.trim() || '';
+            const telefon = form.querySelector('#telefon')?.value?.trim() || '';
+            const epost = form.querySelector('#epost')?.value?.trim() || '';
+            const meddelande = form.querySelector('#meddelande')?.value?.trim() || '';
+
+            // Build email subject and body
+            const subject = encodeURIComponent('Offertförfrågan från ' + namn + (foretag ? ' (' + foretag + ')' : ''));
+            const body = encodeURIComponent(
+                'Hej Björklinge Maskin AB,\n\n' +
+                meddelande + '\n\n' +
+                '---\n' +
+                'Kontaktuppgifter:\n' +
+                'Namn: ' + namn + '\n' +
+                (foretag ? 'Företag: ' + foretag + '\n' : '') +
+                'Telefon: ' + telefon + '\n' +
+                'E-post: ' + epost + '\n'
+            );
+
+            // Show loading briefly then open email
             submitBtn.classList.add('loading');
             submitBtn.disabled = true;
 
             setTimeout(() => {
+                // Open user's email client
+                window.location.href = 'mailto:info@csgab.se?subject=' + subject + '&body=' + body;
+
                 submitBtn.classList.remove('loading');
                 submitBtn.classList.add('success');
 
@@ -455,7 +478,7 @@
                     form.reset();
                     form.querySelectorAll('.form-group').forEach(g => g.classList.remove('valid'));
                 }, 2500);
-            }, 1500);
+            }, 500);
         });
 
         // Modal form
