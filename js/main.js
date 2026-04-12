@@ -461,24 +461,24 @@
                 'E-post: ' + epost + '\n'
             );
 
-            // Show loading briefly then open email
-            submitBtn.classList.add('loading');
-            submitBtn.disabled = true;
+            // Open user's email client using a temporary link (most reliable method)
+            const mailtoUrl = 'mailto:info@csgab.se?subject=' + subject + '&body=' + body;
+            const tempLink = document.createElement('a');
+            tempLink.href = mailtoUrl;
+            tempLink.style.display = 'none';
+            document.body.appendChild(tempLink);
+            tempLink.click();
+            document.body.removeChild(tempLink);
+
+            // Show success state
+            submitBtn.classList.add('success');
 
             setTimeout(() => {
-                // Open user's email client
-                window.location.href = 'mailto:info@csgab.se?subject=' + subject + '&body=' + body;
-
-                submitBtn.classList.remove('loading');
-                submitBtn.classList.add('success');
-
-                setTimeout(() => {
-                    submitBtn.classList.remove('success');
-                    submitBtn.disabled = false;
-                    form.reset();
-                    form.querySelectorAll('.form-group').forEach(g => g.classList.remove('valid'));
-                }, 2500);
-            }, 500);
+                submitBtn.classList.remove('success');
+                submitBtn.disabled = false;
+                form.reset();
+                form.querySelectorAll('.form-group').forEach(g => g.classList.remove('valid'));
+            }, 2500);
         });
 
         // Modal form
