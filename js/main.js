@@ -462,7 +462,7 @@
             );
 
             // Open user's email client using a temporary link (most reliable method)
-            const mailtoUrl = 'mailto:info@csgab.se?subject=' + subject + '&body=' + body;
+            const mailtoUrl = 'mailto:info@bjorklingemaskin.se?subject=' + subject + '&body=' + body;
             const tempLink = document.createElement('a');
             tempLink.href = mailtoUrl;
             tempLink.style.display = 'none';
